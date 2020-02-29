@@ -33,7 +33,8 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = 'ru.itmo.client.App'
+    mainClassName = 'ru.itmo.client.App' // для упражнений 1 и 3
+    // mainClassName = 'ru.itmo.sync.U1901Main' // для упражнения 2
 }
 
 test {
