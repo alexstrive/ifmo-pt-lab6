@@ -8,7 +8,7 @@ class ItemCatalog {
     private ArrayList<GenericItem> ALCatalog = new ArrayList<GenericItem>();
 
     public void addItem(GenericItem item) {
-        catalog.put(item.ID, item);
+        catalog.put(item.getId(), item);
         ALCatalog.add(item);
     }
 
@@ -30,7 +30,7 @@ class ItemCatalog {
 
     public GenericItem findItemByIdAL(int id) {
         for (GenericItem item : ALCatalog) {
-            if (item.ID == id) {
+            if (item.getId() == id) {
                 return item;
             }
         }

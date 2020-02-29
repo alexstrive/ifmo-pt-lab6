@@ -5,21 +5,22 @@ import java.util.LinkedList;
 
 class FoodItem extends GenericItem {
 
-    Date dateOfIncome;
-    short expires;
+    private Date dateOfIncome;
+    private short expires;
 
     FoodItem(int ID, String name, float price, Category category, Date dateOfIncome, short expires) {
         super(ID, name, price, category);
-        this.dateOfIncome = dateOfIncome;
-        this.expires = expires;
+        this.setDateOfIncome(dateOfIncome);
+        this.setExpires(expires);
     }
 
     public FoodItem(String name, float price, FoodItem analog, Date date, short expires) {
-        this.name = name;
-        this.price = price;
+        this.setName(name);
+        this.setPrice(price);
         this.addAnalog(analog);
-        this.dateOfIncome = date;
-        this.expires = expires;
+
+        this.setDateOfIncome(date);
+        this.setExpires(expires);
     }
 
     public FoodItem(String name, float price, short expires) {
@@ -37,9 +38,26 @@ class FoodItem extends GenericItem {
 
     @Override
     protected Object clone() {
-        FoodItem item = new FoodItem(this.ID, this.name, this.price, this.category, this.dateOfIncome, this.expires);
-        item.analogs = (LinkedList<GenericItem>) this.analogs.clone();
+        FoodItem item = new FoodItem(this.getId(), this.getName(), this.getPrice(), this.getCategory(),
+                this.getDateOfIncome(), this.getExpires());
+        item.setAnalogs((LinkedList<GenericItem>) this.getAnalogs().clone());
         return item;
+    }
+
+    protected Date getDateOfIncome() {
+        return this.dateOfIncome;
+    }
+
+    protected void setDateOfIncome(Date dateOfIncome) {
+        this.dateOfIncome = dateOfIncome;
+    }
+
+    protected short getExpires() {
+        return this.expires;
+    }
+
+    protected void setExpires(short expires) {
+        this.expires = expires;
     }
 
 }

@@ -1,5 +1,7 @@
 package ifmo.pt.lab4;
 
+import java.util.Date;
+
 class CatalogStubLoader implements CatalogLoader {
 
     @Override

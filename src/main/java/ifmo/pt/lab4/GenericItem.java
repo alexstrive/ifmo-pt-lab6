@@ -3,25 +3,22 @@ package ifmo.pt.lab4;
 import java.util.LinkedList;
 
 class GenericItem {
-    public int ID;
+    private int ID;
     static int currentID = 0;
-    public LinkedList<GenericItem> analogs = new LinkedList<GenericItem>();
-    public String name;
-    public float price;
-    public Category category = Category.GENERAL;
+    private LinkedList<GenericItem> analogs = new LinkedList<GenericItem>();
+    private String name;
+    private float price;
+    private Category category = Category.GENERAL;
 
-    public GenericItem(int ID, String name, float price, Category category) {
-        this.ID = ID;
-        this.name = name;
-        this.price = price;
-        this.category = category;
+    protected GenericItem(int ID, String name, float price, Category category) {
+        this.setId(ID);
+        this.setName(name);
+        this.setPrice(price);
+        this.setCategory(category);
     }
 
     public GenericItem(String name, float price, Category category) {
-        this.ID = GenericItem.currentID++;
-        this.name = name;
-        this.price = price;
-        this.category = category;
+        this(GenericItem.currentID++, name, price, category);
     }
 
     public GenericItem(String name, float price, GenericItem analog) {
@@ -52,4 +49,43 @@ class GenericItem {
         System.out.println(this.toString());
     }
 
+    protected int getId() {
+        return this.ID;
+    }
+
+    protected void setId(int id) {
+        this.ID = id;
+    }
+
+    protected String getName() {
+        return this.name;
+    }
+
+    protected void setName(String name) {
+        this.name = name;
+    }
+
+    protected float getPrice() {
+        return this.price;
+    }
+
+    protected void setPrice(float price) {
+        this.price = price;
+    }
+
+    protected Category getCategory() {
+        return this.category;
+    }
+
+    protected void setCategory(Category category) {
+        this.category = category;
+    }
+
+    protected LinkedList<GenericItem> getAnalogs() {
+        return this.analogs;
+    }
+
+    protected void setAnalogs(LinkedList<GenericItem> analogs) {
+        this.analogs = analogs;
+    }
 }

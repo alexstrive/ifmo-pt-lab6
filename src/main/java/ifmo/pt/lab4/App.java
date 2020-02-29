@@ -30,6 +30,9 @@ public class App {
         System.out.println("In ArrayList: " + (end - begin));
 
         System.out.println("Exercise 2");
-        CatalogLoader anotherLoader = new CatalogStubLoader();
+        CatalogLoader loader = new CatalogStubLoader();
+        loader.load(catalog);
+
+        catalog.printItems();
     }
 }
