@@ -1,4 +1,4 @@
-package ru.billing.stocklist;
+package ru.itmo.stocklist;
 
 import java.util.LinkedList;
 

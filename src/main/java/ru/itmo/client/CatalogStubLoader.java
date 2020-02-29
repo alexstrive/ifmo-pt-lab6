@@ -1,7 +1,7 @@
-package ru.billing.client;
+package ru.itmo.client;
 
 import java.util.Date;
-import ru.billing.stocklist.*;
+import ru.itmo.stocklist.*;
 
 public class CatalogStubLoader implements CatalogLoader {
 
