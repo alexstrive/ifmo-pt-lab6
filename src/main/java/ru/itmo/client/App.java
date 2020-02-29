@@ -9,7 +9,6 @@ import ru.itmo.stocklist.*;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("Exercise 1");
         var catalog = new ItemCatalog();
 
         try {
@@ -36,7 +35,6 @@ public class App {
         end = new Date().getTime();
         System.out.println("In ArrayList: " + (end - begin));
 
-        System.out.println("Exercise 2");
         try {
             CatalogLoader loader = new CatalogStubLoader();
             loader.load(catalog);
@@ -45,5 +43,13 @@ public class App {
             e.printStackTrace();
         }
 
+        try {
+            CatalogLoader fileLoader = new CatalogFileLoader("list.lst");
+            fileLoader.load(catalog);
+            catalog.printItems();
+        } catch (CatalogLoadException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 }
