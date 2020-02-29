@@ -10,7 +10,7 @@ public class GenericItem {
     private float price;
     private Category category = Category.GENERAL;
 
-    protected GenericItem(int ID, String name, float price, Category category) {
+    public GenericItem(int ID, String name, float price, Category category) {
         this.setId(ID);
         this.setName(name);
         this.setPrice(price);

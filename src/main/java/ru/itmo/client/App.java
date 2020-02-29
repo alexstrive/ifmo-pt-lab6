@@ -2,6 +2,9 @@
 package ru.itmo.client;
 
 import java.util.Date;
+
+import ru.itmo.exceptions.CatalogLoadException;
+import ru.itmo.exceptions.ItemAlreadyExistsException;
 import ru.itmo.stocklist.*;
 
 public class App {
@@ -9,8 +12,13 @@ public class App {
         System.out.println("Exercise 1");
         var catalog = new ItemCatalog();
 
-        catalog.addItem(new GenericItem(), new GenericItem(), new GenericItem(), new GenericItem(), new GenericItem(),
-                new GenericItem(), new GenericItem(), new GenericItem(), new GenericItem(), new GenericItem());
+        try {
+            catalog.addItem(new GenericItem(), new GenericItem(), new GenericItem(), new GenericItem(),
+                    new GenericItem(), new GenericItem(), new GenericItem(), new GenericItem(), new GenericItem(),
+                    new GenericItem());
+        } catch (ItemAlreadyExistsException e) {
+            e.printStackTrace();
+        }
 
         catalog.printItems();
 
@@ -29,9 +37,13 @@ public class App {
         System.out.println("In ArrayList: " + (end - begin));
 
         System.out.println("Exercise 2");
-        CatalogLoader loader = new CatalogStubLoader();
-        loader.load(catalog);
+        try {
+            CatalogLoader loader = new CatalogStubLoader();
+            loader.load(catalog);
+            catalog.printItems();
+        } catch (CatalogLoadException e) {
+            e.printStackTrace();
+        }
 
-        catalog.printItems();
     }
 }

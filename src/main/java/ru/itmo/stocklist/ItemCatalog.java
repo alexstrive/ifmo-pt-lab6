@@ -1,18 +1,25 @@
 package ru.itmo.stocklist;
 
 import java.util.HashMap;
+
+import ru.itmo.exceptions.ItemAlreadyExistsException;
+
 import java.util.ArrayList;
 
 public class ItemCatalog {
     private HashMap<Integer, GenericItem> catalog = new HashMap<Integer, GenericItem>();
     private ArrayList<GenericItem> ALCatalog = new ArrayList<GenericItem>();
 
-    public void addItem(GenericItem item) {
+    public void addItem(GenericItem item) throws ItemAlreadyExistsException {
+        if (catalog.containsKey(item.getId())) {
+            throw new ItemAlreadyExistsException();
+        }
+
         catalog.put(item.getId(), item);
         ALCatalog.add(item);
     }
 
-    public void addItem(GenericItem... items) {
+    public void addItem(GenericItem... items) throws ItemAlreadyExistsException {
         for (var item : items) {
             this.addItem(item);
         }
