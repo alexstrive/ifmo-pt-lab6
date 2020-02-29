@@ -1,8 +1,8 @@
-package ifmo.pt.lab4;
+package ru.billing.stocklist;
 
 import java.util.LinkedList;
 
-class GenericItem {
+public class GenericItem {
     private int ID;
     static int currentID = 0;
     private LinkedList<GenericItem> analogs = new LinkedList<GenericItem>();

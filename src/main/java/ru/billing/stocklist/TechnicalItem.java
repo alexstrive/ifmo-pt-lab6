@@ -1,8 +1,8 @@
-package ifmo.pt.lab4;
+package ru.billing.stocklist;
 
 import java.util.LinkedList;
 
-class TechnicalItem extends GenericItem {
+public class TechnicalItem extends GenericItem {
     private short warrantyTime;
 
     TechnicalItem(int ID, String name, float price, Category category, short warrantyTime) {

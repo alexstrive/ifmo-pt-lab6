@@ -1,9 +1,9 @@
-package ifmo.pt.lab4;
+package ru.billing.stocklist;
 
 import java.util.HashMap;
 import java.util.ArrayList;
 
-class ItemCatalog {
+public class ItemCatalog {
     private HashMap<Integer, GenericItem> catalog = new HashMap<Integer, GenericItem>();
     private ArrayList<GenericItem> ALCatalog = new ArrayList<GenericItem>();
 

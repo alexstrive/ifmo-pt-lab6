@@ -1,8 +1,9 @@
-package ifmo.pt.lab4;
+package ru.billing.client;
 
 import java.util.Date;
+import ru.billing.stocklist.*;
 
-class CatalogStubLoader implements CatalogLoader {
+public class CatalogStubLoader implements CatalogLoader {
 
     @Override
     public void load(ItemCatalog catalog) {

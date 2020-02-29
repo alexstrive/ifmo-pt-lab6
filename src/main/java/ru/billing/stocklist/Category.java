@@ -1,4 +1,4 @@
-package ifmo.pt.lab4;
+package ru.billing.stocklist;
 
 public enum Category {
     FOOD, PRINT, DRESS, GENERAL

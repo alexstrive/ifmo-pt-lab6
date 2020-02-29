@@ -1,9 +1,9 @@
-package ifmo.pt.lab4;
+package ru.billing.stocklist;
 
 import java.util.Date;
 import java.util.LinkedList;
 
-class FoodItem extends GenericItem {
+public class FoodItem extends GenericItem {
 
     private Date dateOfIncome;
     private short expires;
